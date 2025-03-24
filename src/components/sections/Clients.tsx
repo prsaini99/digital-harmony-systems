@@ -43,39 +43,39 @@ const Clients = () => {
         {/* Case Studies */}
         <div className="mb-16 space-y-10 reveal-bottom">
           <CaseStudy 
-            title="Ease My Trip"
-            description="Comprehensive digital marketing campaign to increase bookings and reduce cost per acquisition."
+            company="Ease My Trip"
+            industry="Travel & Tourism"
+            challenge="High cost per acquisition and need for increased booking volume"
+            solution="Comprehensive digital marketing campaign with optimized targeting and conversion tracking"
             results={[
               "Reduced CPA from 18% to 12%",
               "Increased revenue by 150%",
               "Improved conversion rates across all channels"
             ]}
-            industry="Travel & Tourism"
-            image="https://images.unsplash.com/photo-1488085061387-422e29b40080?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1731&q=80"
           />
           
           <CaseStudy 
-            title="Fortis Hospitals"
-            description="Targeted digital marketing campaign for specialized oncology services."
+            company="Fortis Hospitals"
+            industry="Healthcare"
+            challenge="Need to increase visibility and patient acquisition for oncology services"
+            solution="Targeted digital marketing campaign with specialized healthcare advertising strategies"
             results={[
               "Increased oncology footfall by 30%",
               "Enhanced online appointment bookings",
               "Improved digital presence in healthcare space"
             ]}
-            industry="Healthcare"
-            image="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1700&q=80"
           />
           
           <CaseStudy 
-            title="QI Blockchain"
-            description="Complete blockchain ecosystem development including DEX, NFTs, and wallet solutions."
+            company="QI Blockchain"
+            industry="Crypto & Fintech"
+            challenge="Need for comprehensive blockchain ecosystem development"
+            solution="End-to-end blockchain solution development including DEX, NFTs, and wallet integration"
             results={[
               "Successful launch of decentralized exchange",
               "Secure wallet infrastructure implementation",
               "NFT marketplace development and integration"
             ]}
-            industry="Crypto & Fintech"
-            image="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1664&q=80"
           />
         </div>
         
