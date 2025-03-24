@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Container from '../ui/Container';
 import { cn } from '@/lib/utils';
@@ -7,6 +8,7 @@ import { cn } from '@/lib/utils';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
   
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   
@@ -27,6 +29,12 @@ const Navbar = () => {
     e.preventDefault();
     setIsMenuOpen(false);
     
+    // If we're not on the home page, navigate there first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${targetId}`;
+      return;
+    }
+    
     const target = document.getElementById(targetId);
     if (target) {
       window.scrollTo({
@@ -44,8 +52,8 @@ const Navbar = () => {
       )}
     >
       <Container className="flex items-center justify-between">
-        <a 
-          href="#" 
+        <Link 
+          to="/" 
           className="flex items-center text-2xl font-heading font-bold"
         >
           <img 
@@ -58,7 +66,7 @@ const Navbar = () => {
             <span className="text-brand-600">Point</span>
             <span>2</span>
           </span>
-        </a>
+        </Link>
         
         <div className="hidden md:flex items-center space-x-8">
           <a 
@@ -68,6 +76,12 @@ const Navbar = () => {
           >
             Services
           </a>
+          <Link 
+            to="/services" 
+            className="text-sm font-medium hover:text-brand-600 transition-colors"
+          >
+            Service Details
+          </Link>
           <a 
             href="#clients" 
             onClick={(e) => handleNavLinkClick(e, 'clients')}
@@ -115,6 +129,13 @@ const Navbar = () => {
           >
             Services
           </a>
+          <Link 
+            to="/services" 
+            className="text-lg font-medium hover:text-brand-600 transition-colors"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Service Details
+          </Link>
           <a 
             href="#clients" 
             onClick={(e) => handleNavLinkClick(e, 'clients')}

@@ -180,6 +180,55 @@ const Clients = () => {
                 results="Digital marketing and product development"
                 delay={400}
               />
+              
+              <ClientCard 
+                name="bitbatua"
+                industry="Crypto"
+                results="Crypto exchange marketing and user acquisition"
+                delay={500}
+              />
+              
+              <ClientCard 
+                name="Floxypay"
+                industry="Fintech"
+                results="Payment solutions and blockchain integration"
+                delay={600}
+              />
+              
+              <ClientCard 
+                name="Lbank"
+                industry="Crypto"
+                results="Exchange marketing and community development"
+                delay={700}
+              />
+              
+              <ClientCard 
+                name="OkX Exchange"
+                industry="Crypto"
+                results="Strategic marketing campaigns for user growth"
+                delay={800}
+              />
+              
+              <ClientCard 
+                name="Mexc Global Exchange"
+                industry="Crypto"
+                results="Comprehensive marketing and brand building"
+                delay={900}
+              />
+              
+              <ClientCard 
+                name="LegalPay"
+                industry="Fintech"
+                results="Legal tech solutions and blockchain integration"
+                delay={1000}
+              />
+              
+              <ClientCard 
+                name="Curd Network"
+                industry="Blockchain"
+                results="Blockchain infrastructure development"
+                delay={1100}
+              />
             </div>
           </div>
           

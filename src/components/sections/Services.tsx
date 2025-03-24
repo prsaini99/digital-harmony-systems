@@ -1,9 +1,11 @@
 
 import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Container from '../ui/Container';
 import SectionTitle from '../ui/SectionTitle';
 import ServiceCard from '../ui/ServiceCard';
-import { GlobeLock, Code, Award, ActivitySquare, Smartphone, Bitcoin, Rocket, BarChart, Search, Users } from 'lucide-react';
+import { GlobeLock, Code, Award, ActivitySquare, Smartphone, Bitcoin, Rocket, BarChart, Search, Users, ArrowRight } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const Services = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -42,8 +44,11 @@ const Services = () => {
         
         {/* Digital Marketing Services */}
         <div className="mb-16 reveal-bottom">
-          <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100">
+          <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100 flex items-center">
             Digital Marketing
+            <Link to="/services" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
+              View all services <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
           </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,8 +98,11 @@ const Services = () => {
         
         {/* Software & Tech Solutions */}
         <div className="mb-16 reveal-bottom">
-          <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100">
+          <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100 flex items-center">
             Software & Tech Solutions
+            <Link to="/services" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
+              View all services <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
           </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -123,8 +131,11 @@ const Services = () => {
         
         {/* Product Development */}
         <div className="reveal-bottom">
-          <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100">
+          <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100 flex items-center">
             Product Development
+            <Link to="/services" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
+              View all services <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
           </h3>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,6 +160,14 @@ const Services = () => {
               delay={300}
             />
           </div>
+        </div>
+        
+        <div className="mt-16 text-center reveal-bottom">
+          <Link to="/services">
+            <Button size="lg" className="bg-brand-600 hover:bg-brand-700">
+              Explore All Services
+            </Button>
+          </Link>
         </div>
       </Container>
     </section>
