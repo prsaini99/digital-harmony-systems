@@ -8,15 +8,20 @@ import SectionTitle from '@/components/ui/SectionTitle';
 import { 
   Search, Code, Bitcoin, Rocket, ArrowRight, GlobeLock, BarChart, 
   Users, Award, MessageSquare, Target, FileCode, Smartphone, 
-  Database, Cpu, Lightbulb, Figma, TrendingUp, BarChartHorizontal
+  Database, Cpu, Lightbulb, Figma, TrendingUp, BarChartHorizontal,
+  Zap, Shield, BriefcaseBusiness
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import ServiceFeature from '@/components/ui/ServiceFeature';
+import { config } from '@/lib/config';
 
 interface ServiceCategoryProps {
   title: string;
   description: string;
   icon: React.ReactNode;
+  path: string;
   services: {
     name: string;
     description: string;
@@ -59,6 +64,7 @@ const ServiceDetails = () => {
       title: "Digital Marketing",
       description: "Strategic digital marketing solutions to increase visibility, engagement, and conversions.",
       icon: <Search size={32} />,
+      path: "/services/digital-marketing",
       services: [
         {
           name: "Google Ads & PPC Strategies",
@@ -101,6 +107,7 @@ const ServiceDetails = () => {
       title: "Blockchain & Crypto Solutions",
       description: "Comprehensive blockchain and cryptocurrency solutions for the modern digital economy.",
       icon: <Bitcoin size={32} />,
+      path: "/services/blockchain-crypto",
       services: [
         {
           name: "Smart Contract Creation",
@@ -143,6 +150,7 @@ const ServiceDetails = () => {
       title: "Software Development",
       description: "Custom software solutions tailored to meet your specific business needs.",
       icon: <Code size={32} />,
+      path: "/services/software-development",
       services: [
         {
           name: "Enterprise Solutions",
@@ -175,6 +183,7 @@ const ServiceDetails = () => {
       title: "Product Development",
       description: "End-to-end product development services from concept to market.",
       icon: <Rocket size={32} />,
+      path: "/services/product-development",
       services: [
         {
           name: "Ideation & Strategy",
@@ -209,26 +218,62 @@ const ServiceDetails = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-24">
-        <section className="py-12 md:py-20 bg-gray-50">
+        <section className="py-12 md:py-20">
           <Container>
             <SectionTitle 
               title="Our Services"
               subtitle="Comprehensive solutions tailored to drive your business forward"
             />
             
+            {/* Value proposition section */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+              <ServiceFeature
+                title="Results-Driven Approach"
+                description="We focus on delivering measurable results and ROI for all our client engagements."
+                icon={Target}
+                className="reveal-item opacity-0"
+              />
+              <ServiceFeature
+                title="Innovative Solutions"
+                description="Cutting-edge technologies and creative strategies that keep you ahead of competitors."
+                icon={Zap}
+                className="reveal-item opacity-0"
+              />
+              <ServiceFeature
+                title="Expert Team"
+                description="Specialists with extensive experience across multiple industries and technologies."
+                icon={Shield}
+                className="reveal-item opacity-0"
+              />
+            </div>
+            
             <div className="mt-12 space-y-16">
               {serviceCategories.map((category, categoryIndex) => (
                 <div key={categoryIndex} className="reveal-item opacity-0 transition-all duration-500">
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-100 text-brand-600">
-                      {category.icon}
+                  <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10">
+                    <div className="flex items-center gap-3">
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-100 text-brand-600">
+                        {category.icon}
+                      </div>
+                      <h2 className="text-2xl md:text-3xl font-bold">{category.title}</h2>
                     </div>
-                    <h2 className="text-2xl md:text-3xl font-bold">{category.title}</h2>
+                    
+                    <div className="md:ml-auto">
+                      <Link to={category.path}>
+                        <Button variant="outline" className="border-brand-600 text-brand-600 hover:bg-brand-50">
+                          View Details <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </div>
                   </div>
                   
-                  <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
-                    {category.description}
-                  </p>
+                  <Card className="mb-8">
+                    <CardHeader>
+                      <CardDescription className="text-lg text-muted-foreground">
+                        {category.description}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {category.services.map((service, serviceIndex) => (
@@ -248,17 +293,76 @@ const ServiceDetails = () => {
                           <h3 className="font-semibold">{service.name}</h3>
                         </div>
                         <p className="text-muted-foreground text-sm mb-4">{service.description}</p>
-                        <Button 
-                          variant="ghost" 
-                          className="text-brand-600 hover:text-brand-700 p-0 mt-auto self-start"
+                        <Link 
+                          to={category.path} 
+                          className="text-brand-600 hover:text-brand-700 flex items-center text-sm font-medium mt-auto"
                         >
                           Learn more <ArrowRight className="ml-1 h-4 w-4" />
-                        </Button>
+                        </Link>
                       </div>
                     ))}
                   </div>
                 </div>
               ))}
+            </div>
+            
+            {/* Why Choose Us section */}
+            <div className="mt-20 reveal-item opacity-0">
+              <SectionTitle 
+                title="Why Choose Us"
+                subtitle="Partner with a team that delivers excellence and tangible results"
+                className="mb-10"
+              />
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                <Card>
+                  <CardHeader>
+                    <div className="mb-2 w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                      <BriefcaseBusiness size={20} />
+                    </div>
+                    <CardTitle className="text-xl">Industry Experience</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">Over 10 years of experience working with clients across industries.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <div className="mb-2 w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                      <Users size={20} />
+                    </div>
+                    <CardTitle className="text-xl">Dedicated Team</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">A specialized team dedicated to your project's success.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <div className="mb-2 w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                      <Target size={20} />
+                    </div>
+                    <CardTitle className="text-xl">Data-Driven</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">All strategies and solutions backed by comprehensive data analysis.</p>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <div className="mb-2 w-10 h-10 rounded-full bg-brand-100 flex items-center justify-center text-brand-600">
+                      <Zap size={20} />
+                    </div>
+                    <CardTitle className="text-xl">Fast Delivery</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">Efficient project management with timely delivery of results.</p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
             
             <div className="mt-16 text-center reveal-item opacity-0">
