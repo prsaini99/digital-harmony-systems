@@ -46,7 +46,7 @@ const Services = () => {
         <div className="mb-16 reveal-bottom">
           <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100 flex items-center">
             Digital Marketing
-            <Link to="/services" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
+            <Link to="/services/digital-marketing" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
               View all services <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </h3>
@@ -57,6 +57,7 @@ const Services = () => {
               description="Strategic Google Ads campaigns optimized for maximum ROI and conversions."
               icon={Search}
               delay={100}
+              linkTo="/services/digital-marketing"
             />
             
             <ServiceCard 
@@ -64,6 +65,7 @@ const Services = () => {
               description="Comprehensive search engine optimization and marketing strategies to improve visibility."
               icon={GlobeLock}
               delay={200}
+              linkTo="/services/digital-marketing"
             />
             
             <ServiceCard 
@@ -71,6 +73,7 @@ const Services = () => {
               description="Advanced automated ad buying with Amazon DSP and Google ADex for precise targeting."
               icon={BarChart}
               delay={300}
+              linkTo="/services/digital-marketing"
             />
             
             <ServiceCard 
@@ -78,6 +81,7 @@ const Services = () => {
               description="Strategic social media campaigns across platforms to increase brand awareness and engagement."
               icon={Users}
               delay={400}
+              linkTo="/services/digital-marketing"
             />
             
             <ServiceCard 
@@ -85,6 +89,7 @@ const Services = () => {
               description="Connecting brands with the right influencers to amplify their message and reach."
               icon={Award}
               delay={500}
+              linkTo="/services/digital-marketing"
             />
             
             <ServiceCard 
@@ -92,6 +97,7 @@ const Services = () => {
               description="Comprehensive lead generation strategies with advanced scoring for quality prospects."
               icon={ActivitySquare}
               delay={600}
+              linkTo="/services/digital-marketing"
             />
           </div>
         </div>
@@ -100,7 +106,7 @@ const Services = () => {
         <div className="mb-16 reveal-bottom">
           <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100 flex items-center">
             Software & Tech Solutions
-            <Link to="/services" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
+            <Link to="/services/software-development" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
               View all services <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </h3>
@@ -111,6 +117,7 @@ const Services = () => {
               description="Custom blockchain solutions including smart contracts, DApps, and crypto exchange development."
               icon={Bitcoin}
               delay={100}
+              linkTo="/services/blockchain-crypto"
             />
             
             <ServiceCard 
@@ -118,6 +125,7 @@ const Services = () => {
               description="Immersive augmented and virtual reality experiences for travel, navigation, and marketing."
               icon={Smartphone}
               delay={200}
+              linkTo="/services/software-development"
             />
             
             <ServiceCard 
@@ -125,6 +133,7 @@ const Services = () => {
               description="Tailored software solutions built with cutting-edge technologies to meet specific business needs."
               icon={Code}
               delay={300}
+              linkTo="/services/software-development"
             />
           </div>
         </div>
@@ -133,7 +142,7 @@ const Services = () => {
         <div className="reveal-bottom">
           <h3 className="text-2xl md:text-3xl font-bold mb-10 pb-2 border-b border-gray-100 flex items-center">
             Product Development
-            <Link to="/services" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
+            <Link to="/services/product-development" className="ml-auto text-base font-medium text-brand-600 hover:text-brand-700 flex items-center">
               View all services <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </h3>
@@ -144,6 +153,7 @@ const Services = () => {
               description="End-to-end product development from concept and strategy to MVP and scaling."
               icon={Rocket}
               delay={100}
+              linkTo="/services/product-development"
             />
             
             <ServiceCard 
@@ -151,6 +161,7 @@ const Services = () => {
               description="User-centered design focused on creating intuitive, engaging digital experiences."
               icon={Smartphone}
               delay={200}
+              linkTo="/services/product-development"
             />
             
             <ServiceCard 
@@ -158,6 +169,7 @@ const Services = () => {
               description="Comprehensive market research and analysis to ensure product-market fit and success."
               icon={ActivitySquare}
               delay={300}
+              linkTo="/services/product-development"
             />
           </div>
         </div>
