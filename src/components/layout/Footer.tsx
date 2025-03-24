@@ -9,10 +9,17 @@ const Footer = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1 lg:col-span-1">
-            <a href="#" className="text-2xl font-heading font-bold mb-4 inline-block">
-              <span className="text-brand-600">11</span>
-              <span>Point</span>
-              <span className="text-brand-600">2</span>
+            <a href="#" className="flex items-center text-2xl font-heading font-bold mb-4">
+              <img 
+                src="/lovable-uploads/038e12d7-9b37-4f4c-88a5-edb60da5e3af.png" 
+                alt="11Point2 Logo" 
+                className="h-8 mr-2"
+              />
+              <span>
+                <span>11</span>
+                <span className="text-brand-600">Point</span>
+                <span>2</span>
+              </span>
             </a>
             <p className="text-muted-foreground mb-4">
               Your Results-Driven Partner in Digital Marketing, Software, Product & Blockchain Development

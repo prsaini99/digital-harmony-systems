@@ -31,7 +31,7 @@ const ServiceCard = ({
       }}
       {...props}
     >
-      <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-brand-100 text-brand-700">
+      <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-brand-100 text-brand-600">
         <Icon size={24} />
       </div>
       <h3 className="mb-3 text-xl font-semibold">{title}</h3>

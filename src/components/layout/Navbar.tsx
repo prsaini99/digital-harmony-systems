@@ -46,11 +46,18 @@ const Navbar = () => {
       <Container className="flex items-center justify-between">
         <a 
           href="#" 
-          className="text-2xl font-heading font-bold"
+          className="flex items-center text-2xl font-heading font-bold"
         >
-          <span className="text-brand-600">11</span>
-          <span>Point</span>
-          <span className="text-brand-600">2</span>
+          <img 
+            src="/lovable-uploads/038e12d7-9b37-4f4c-88a5-edb60da5e3af.png" 
+            alt="11Point2 Logo" 
+            className="h-10 mr-2"
+          />
+          <span className="hidden sm:block">
+            <span>11</span>
+            <span className="text-brand-600">Point</span>
+            <span>2</span>
+          </span>
         </a>
         
         <div className="hidden md:flex items-center space-x-8">

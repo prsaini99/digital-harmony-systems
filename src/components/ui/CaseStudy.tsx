@@ -1,67 +1,70 @@
 
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronRight } from 'lucide-react';
+import { Badge } from './badge';
 
-interface CaseStudyProps extends React.HTMLAttributes<HTMLDivElement> {
-  title: string;
-  description: string;
-  results: string[];
+interface CaseStudyProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'results'> {
+  company: string;
   industry: string;
-  image?: string;
-  className?: string;
+  challenge: string;
+  solution: string;
+  results: string[];
+  delay?: number;
 }
 
-const CaseStudy = ({ 
-  title, 
-  description, 
-  results, 
+const CaseStudy = ({
+  company,
   industry,
-  image,
-  className, 
-  ...props 
+  challenge,
+  solution,
+  results,
+  delay = 0,
+  className,
+  ...props
 }: CaseStudyProps) => {
   return (
-    <div 
+    <div
       className={cn(
-        'relative overflow-hidden glass-card flex flex-col md:flex-row gap-6 p-6',
+        'glass-card p-6 md:p-8 h-full',
         className
       )}
+      style={{
+        animationDelay: `${delay}ms`,
+        opacity: 0,
+        animation: `fade-in 0.6s ease-out ${delay}ms forwards`
+      }}
       {...props}
     >
-      <div className="md:w-1/2 lg:w-3/5 flex flex-col">
+      <div className="flex flex-col h-full">
         <div className="mb-4">
-          <span className="inline-block py-1 px-2 text-xs font-medium bg-brand-100 text-brand-700 rounded-full">
+          <Badge variant="outline" className="bg-brand-50 text-brand-700 border-brand-200">
             {industry}
-          </span>
+          </Badge>
         </div>
-        <h3 className="mb-3">{title}</h3>
-        <p className="mb-4 text-muted-foreground">{description}</p>
         
-        <div className="mt-auto">
-          <h4 className="text-base font-medium mb-2">Key Results:</h4>
-          <ul className="space-y-1">
-            {results.map((result, index) => (
-              <li key={index} className="flex items-start">
-                <ChevronRight size={16} className="mr-1 mt-1 text-brand-500 flex-shrink-0" />
-                <span>{result}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      
-      {image && (
-        <div className="md:w-1/2 lg:w-2/5">
-          <div className="h-full w-full rounded-lg overflow-hidden bg-muted">
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full h-full object-cover"
-            />
+        <h3 className="text-xl font-semibold mb-4">{company}</h3>
+        
+        <div className="space-y-4 flex-grow">
+          <div>
+            <h4 className="text-base font-medium mb-1">Challenge</h4>
+            <p className="text-sm text-muted-foreground">{challenge}</p>
+          </div>
+          
+          <div>
+            <h4 className="text-base font-medium mb-1">Solution</h4>
+            <p className="text-sm text-muted-foreground">{solution}</p>
+          </div>
+          
+          <div>
+            <h4 className="text-base font-medium mb-1">Results</h4>
+            <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+              {results.map((result, index) => (
+                <li key={index}>{result}</li>
+              ))}
+            </ul>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

@@ -2,7 +2,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-interface ClientCardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ClientCardProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'results'> {
   name: string;
   logo?: string;
   industry: string;
