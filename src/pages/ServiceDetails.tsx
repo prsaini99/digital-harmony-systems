@@ -47,7 +47,48 @@ const ServiceDetails = () => {
             <SectionTitle 
               title="Our Services"
               subtitle="Comprehensive solutions tailored to drive your business forward"
+              className="mb-16"
             />
+            
+            {/* Hero banner for services */}
+            <div className="glass-card p-8 mb-16 reveal-item opacity-0">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h2 className="text-3xl font-bold mb-4">Strategic Solutions for Modern Businesses</h2>
+                  <p className="text-lg text-muted-foreground mb-6">
+                    At 11Point2, we provide comprehensive digital services that help businesses 
+                    adapt and thrive in today's competitive landscape. From digital marketing 
+                    to custom software development, we deliver solutions that drive measurable 
+                    results.
+                  </p>
+                  <p className="text-lg text-muted-foreground">
+                    Our expert teams combine deep industry knowledge with cutting-edge 
+                    technology to create strategies that align with your business goals 
+                    and deliver long-term value.
+                  </p>
+                </div>
+                <div className="bg-gradient-to-r from-brand-100 to-brand-50 p-8 rounded-lg">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center">1</div>
+                      <p className="font-medium">Consultation & Strategy Development</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center">2</div>
+                      <p className="font-medium">Solution Design & Implementation</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center">3</div>
+                      <p className="font-medium">Optimization & Measurement</p>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center">4</div>
+                      <p className="font-medium">Continuous Support & Improvement</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             
             {/* Value proposition section */}
             <ValueProposition />
